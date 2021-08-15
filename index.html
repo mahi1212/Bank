@@ -9,6 +9,21 @@
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to my bank</h1>
+    <header>
+        <h1 class="text-5xl text-center mt-16 uppercase"><span class="text-red-500">Welcome to my</span> <span class="text-indigo-600 font-semibold">bank</span></h1>
+    </header>    
+    <body>
+        <main>
+            <section class="p-4 bg-green-300 w-3/4 mx-auto mt-8">
+                <h3 class="text-4xl mb-4">Please login</h3>
+                <div>
+                    <input id="user-email" class="mb-4 border-2 border-gray-400 rounded block w-3/4" type="email" name="" id="email" placeholder="email"> 
+                    <input id="user-pass" class="mb-4 border-2 border-gray-400 rounded block w-3/4" type="password" name="" id="pass" placeholder="password">
+                    <button id="login-btn" class="bg-green-600 px-4 py-2 rounded text-white">Login</button>
+                </div>
+            </section>
+        </main>
+        <script src="index.js"></script>
+    </body>
 </body>
 </html>
