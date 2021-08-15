@@ -19,16 +19,23 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
 });
 
 // Withdraw btn handler
-document.getElementById('withdraw-btn').addEventListener('click', function(){
-    // dom selection
-    const withdrawTotal = document.getElementById('withdraw-total');
-    
+document.getElementById('withdraw-btn').addEventListener('click', function(){    
     // get amount
     const withdrawInput = document.getElementById('withdraw-input');
     const withdrawAmount = withdrawInput.value;
-    const newWithdraw = parseFloat(withdrawAmount)
-    console.log(newWithdraw)
+    
     // clear input field
     withdrawInput.value = "";
     
+    // Update value
+    const withdrawTotal = document.getElementById('withdraw-total');
+    const currentWithdrawAmount = withdrawTotal.innerText;
+    const finalWithdraw = parseFloat(currentWithdrawAmount) + parseFloat(withdrawAmount);
+    withdrawTotal.innerText = finalWithdraw;
+    
+    // update balace
+    const balaceTotal = document.getElementById('balace-total');
+    const currentBalanceAmount = balaceTotal.innerText;
+    balaceTotal.innerText = parseFloat(currentBalanceAmount) - parseFloat(withdrawAmount);
+
 });
