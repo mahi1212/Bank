@@ -4,12 +4,17 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const depositInput = document.getElementById('deposit-input');
     const depositAmount = depositInput.value;
     
-    // set the value to deposit total
+    // set the value to deposit total (most critical)
     const depositTotal = document.getElementById('deposit-total');
-    depositTotal.innerText = "$ "+  depositAmount;
+    const currentDepositAmount = depositTotal.innerText;
+    depositTotal.innerText = parseFloat(depositAmount) +parseFloat(currentDepositAmount) ;
     
     // clear deposit input field
     depositInput.value = '';
 
-    
+    // update balace for deposit
+    const balaceTotal = document.getElementById('balace-total');
+    const currentBalanceAmount = balaceTotal.innerText;
+    balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+
 });
