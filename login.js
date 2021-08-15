@@ -1,3 +1,4 @@
+// Login button check
 document.getElementById('login-btn').addEventListener('click', function(){
     // Get user email
     const emailField = document.getElementById('user-email');
