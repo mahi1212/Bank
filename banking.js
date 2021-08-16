@@ -1,9 +1,16 @@
+// getting value using function
+function getValue(){
+    const depositInput = document.getElementById('deposit-input');
+    return depositAmount = depositInput.value;
+}
+
 // deposit btn handler
 document.getElementById('deposit-btn').addEventListener('click', function(){
     // get the amount
-    const depositInput = document.getElementById('deposit-input');
-    const depositAmount = depositInput.value;
     
+    // const depositInput = document.getElementById('deposit-input');
+    // const depositAmount = depositInput.value;
+    const depositAmount = getValue();
     // set the value to deposit total (most critical)
     const depositTotal = document.getElementById('deposit-total');
     const currentDepositAmount = depositTotal.innerText;
