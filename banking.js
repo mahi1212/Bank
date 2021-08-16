@@ -13,6 +13,12 @@ function updateTotalField(totalFieldId, depositAmount){
     const currentAmount = totalField.innerText;
     totalField.innerText = parseFloat(depositAmount) +parseFloat(currentAmount) ;
 }
+ 
+function updateBalance( depositAmount){
+    const balaceTotal = document.getElementById('balace-total');
+    const currentBalanceAmount = balaceTotal.innerText;
+    balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+}
 
 // deposit btn handler
 document.getElementById('deposit-btn').addEventListener('click', function(){
@@ -31,9 +37,10 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     // depositInput.value = '';
 
     // update balace for deposit
-    const balaceTotal = document.getElementById('balace-total');
-    const currentBalanceAmount = balaceTotal.innerText;
-    balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+    // const balaceTotal = document.getElementById('balace-total');
+    // const currentBalanceAmount = balaceTotal.innerText;
+    // balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+    updateBalance(depositAmount);
 });
 
 // Withdraw btn handler
@@ -50,11 +57,11 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     // const withdrawTotal = document.getElementById('withdraw-total');
     // const currentWithdrawAmount = withdrawTotal.innerText;
     // const finalWithdraw = parseFloat(currentWithdrawAmount) + parseFloat(withdrawAmount);
-    withdrawTotal.innerText = finalWithdraw;
+    // withdrawTotal.innerText = finalWithdraw;
     
     // update balace
-    const balaceTotal = document.getElementById('balace-total');
-    const currentBalanceAmount = balaceTotal.innerText;
-    balaceTotal.innerText = parseFloat(currentBalanceAmount) - parseFloat(withdrawAmount);
-
+    // const balaceTotal = document.getElementById('balace-total');
+    // const currentBalanceAmount = balaceTotal.innerText;
+    // balaceTotal.innerText = parseFloat(currentBalanceAmount) - parseFloat(withdrawAmount);
+     updateBalance(-withdrawAmount);
 });
