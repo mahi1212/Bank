@@ -1,7 +1,11 @@
 // getting value using function
 function getValue(){
     const depositInput = document.getElementById('deposit-input');
-    return depositAmount = depositInput.value;
+    const depositAmount = depositInput.value;
+
+    // clear deposit input field
+    depositInput.value = '';
+    return depositAmount;
 }
 
 // deposit btn handler
@@ -17,7 +21,7 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     depositTotal.innerText = parseFloat(depositAmount) +parseFloat(currentDepositAmount) ;
     
     // clear deposit input field
-    depositInput.value = '';
+    // depositInput.value = '';
 
     // update balace for deposit
     const balaceTotal = document.getElementById('balace-total');
