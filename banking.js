@@ -14,10 +14,15 @@ function updateTotalField(totalFieldId, depositAmount){
     totalField.innerText = parseFloat(depositAmount) +parseFloat(currentAmount) ;
 }
  
-function updateBalance( depositAmount){
+function updateBalance( depositAmount, isAdd){
     const balaceTotal = document.getElementById('balace-total');
     const currentBalanceAmount = balaceTotal.innerText;
-    balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+    if(isAdd == true){
+        balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
+    }
+    else{
+        balaceTotal.innerText = parseFloat(currentBalanceAmount) - parseFloat(depositAmount);
+    }
 }
 
 // deposit btn handler
@@ -40,7 +45,7 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     // const balaceTotal = document.getElementById('balace-total');
     // const currentBalanceAmount = balaceTotal.innerText;
     // balaceTotal.innerText = parseFloat(currentBalanceAmount) + parseFloat(depositAmount);
-    updateBalance(depositAmount);
+    updateBalance(depositAmount, true);
 });
 
 // Withdraw btn handler
@@ -63,5 +68,5 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     // const balaceTotal = document.getElementById('balace-total');
     // const currentBalanceAmount = balaceTotal.innerText;
     // balaceTotal.innerText = parseFloat(currentBalanceAmount) - parseFloat(withdrawAmount);
-     updateBalance(-withdrawAmount);
+    updateBalance(withdrawAmount, false);
 });
